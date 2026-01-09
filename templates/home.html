@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1050px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            border-radius: 18px;
+            padding: 28px 32px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 26px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 26px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 6px;
+            opacity: 0.85;
+        }
+
+        input {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: 2px solid #00c6ff;
+        }
+
+        .full {
+            grid-column: span 3;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: #fff;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 198, 255, 0.4);
+        }
+
+        .result {
+            margin-top: 22px;
+            padding: 14px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.65;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="card">
+
+        <h1>🔥 Forest Fire Prediction System</h1>
+
+        <form action="/predict" method="post">
+
+            <div class="field">
+                <label>Temperature</label>
+                <input type="number" step="any" name="Temperature" required>
+            </div>
+
+            <div class="field">
+                <label>Relative Humidity (RH)</label>
+                <input type="number" step="any" name="RH" required>
+            </div>
+
+            <div class="field">
+                <label>Wind Speed (Ws)</label>
+                <input type="number" step="any" name="Ws" required>
+            </div>
+
+            <div class="field">
+                <label>Rain</label>
+                <input type="number" step="any" name="Rain" required>
+            </div>
+
+            <div class="field">
+                <label>FFMC</label>
+                <input type="number" step="any" name="FFMC" required>
+            </div>
+
+            <div class="field">
+                <label>DMC</label>
+                <input type="number" step="any" name="DMC" required>
+            </div>
+
+            <div class="field">
+                <label>ISI</label>
+                <input type="number" step="any" name="ISI" required>
+            </div>
+
+            <div class="field">
+                <label>Classes</label>
+                <input type="number" step="any" name="Classes" required>
+            </div>
+
+            <div class="field">
+                <label>Region</label>
+                <input type="number" step="any" name="Region" required>
+            </div>
+
+            <div class="full">
+                <button type="submit">Predict Fire Risk</button>
+            </div>
+
+        </form>
+
+        {% if results %}
+        <div class="result">
+            🔍 <strong>Prediction Result:</strong> {{ results }}
+        </div>
+        {% endif %}
+
+        <footer>
+             Flask • Machine Learning Project
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Prediction System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: #00c6ff;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: rgba(255,255,255,0.12);
+            padding: 18px 22px;
+            border-radius: 12px;
+            width: 220px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #00c6ff;
+        }
+
+        .feature-box p {
+            font-size: 13px;
+            margin: 0;
+            opacity: 0.85;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            transition: 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 198, 255, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 198, 255, 0.6);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🔥 <span>Forest Fire</span> Prediction System</h1>
+
+    <p>
+        This project uses <strong>Machine Learning </strong>  
+        to predict the risk of forest fire based on meteorological and environmental factors  
+        such as temperature, humidity, wind speed, and fuel moisture codes.
+    </p>
+
+    <div class="features">
+        <div class="feature-box">
+            <h3>ML Model</h3>
+            <p>Ridge Regression trained on historical fire data</p>
+        </div>
+        <div class="feature-box">
+            <h3>Real-Time Input</h3>
+            <p>User-friendly form for instant prediction</p>
+        </div>
+        <div class="feature-box">
+            <h3>Accurate Output</h3>
+            <p>Helps assess fire risk efficiently</p>
+        </div>
+    </div>
+
+    <a href="/predict" class="btn">Start Prediction</a>
+
+    <footer>
+        Flask •  Machine Learning Project
+    </footer>
+
+</div>
+
+</body>
+</html>
