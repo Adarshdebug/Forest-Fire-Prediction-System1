@@ -4,7 +4,10 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
+
+
 
 
 ## Load the pre-trained(example ridge) model and scaler
